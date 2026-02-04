@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Medlim Empire | Official Fabric Showroom</title>
+    <style>
+        :root { --gold: #c5a059; --dark: #111; --grey: #f8f9fa; --white: #ffffff; --fb-blue: #1877F2; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--white); color: #333; scroll-behavior: smooth; }
+        
+        /* Navigation & Logo */
+        header { padding: 10px; background: white; border-bottom: 3px solid var(--gold); text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        header img { height: 70px; width: auto; }
+
+        .nav-scroll { display: flex; overflow-x: auto; background: var(--dark); white-space: nowrap; padding: 12px; position: sticky; top: 93px; z-index: 999; border-bottom: 1px solid #333; }
+        .nav-scroll a { color: white; text-decoration: none; padding: 5px 15px; font-size: 0.75rem; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+
+        /* Welcome Section */
+        .welcome-hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ibb.co/p6TVcD4K/image.jpg');
+            background-size: cover; background-position: center;
+            padding: 60px 20px; color: white; text-align: center;
+        }
+        .welcome-hero h1 { font-size: 1.8rem; margin: 0; letter-spacing: 2px; text-transform: uppercase; }
+        .welcome-hero p { color: var(--gold); font-style: italic; margin: 10px 0 20px; font-size: 1.1rem; }
+
+        /* Logistics Section */
+        .logistics { display: grid; grid-template-columns: 1fr 1fr; background: var(--gold); color: white; padding: 15px 0; text-align: center; font-weight: bold; font-size: 0.8rem; border-bottom: 2px solid #a68545; }
+
+        /* Video Section Styling */
+        .video-section { padding: 40px 20px; text-align: center; background: #fdfdfd; border-bottom: 1px solid #eee; }
+        .video-container { 
+            max-width: 360px; 
+            margin: 0 auto; 
+            border: 4px solid var(--dark); 
+            border-radius: 15px; 
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .fb-follow-btn { 
+            display: inline-flex; 
+            align-items: center; 
+            background: #1877F2; 
+            color: white; 
+            text-decoration: none; 
+            padding: 12px 25px; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            font-size: 0.85rem; 
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(24, 119, 242, 0.3);
+            transition: 0.3s;
+        }
+        .fb-follow-btn:active { transform: scale(0.95); }
+
+        /* Catalog Grid */
+        .container { padding: 15px; }
+        .category-header { font-size: 1.2rem; padding: 30px 0 10px; border-bottom: 2px solid var(--gold); margin-bottom: 20px; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+        
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+        .card { background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 230px; object-fit: cover; }
+        .card-info { padding: 12px; text-align: center; }
+        .card-info h4 { margin: 0 0 10px; font-size: 0.8rem; height: 35px; overflow: hidden; color: #444; }
+        
+        .price-btn { display: block; background: var(--dark); color: white; text-decoration: none; padding: 10px; font-size: 0.75rem; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .price-btn:active { background: var(--gold); }
+
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; border-radius: 50%; width: 65px; height: 65px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 2000; }
+    </style>
+</head>
+<body>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+
+    <header>
+        <img src="https://i.ibb.co/b5tygzCX/logo.jpg" alt="The Medlim Empire Logo">
+    </header>
+
+    <div class="nav-scroll">
+        <a href="#video">Showcase</a>
+        <a href="#abayas">Abayas</a>
+        <a href="#laces">Beaded Laces</a>
+        <a href="#wrappers">Wrappers</a>
+        <a href="#senator">Senator</a>
+        <a href="#bedsheets">Bedsheets</a>
+        <a href="#nightwear">Night Wears</a>
+        <a href="#shorts">Shorts</a>
+    </div>
+
+    <section class="welcome-hero">
+        <h1>The Medlim Empire</h1>
+        <p>"Taking A Necessary Pace In Fashion"</p>
+    </section>
+
+    <div class="logistics">
+        <div>🚚 NATIONWIDE WAYBILL</div>
+        <div>📍 ABA • ABUJA PICKUP</div>
+    </div>
+
+    <section id="video" class="video-section">
+        <h2 style="text-transform: uppercase; font-weight: 800; font-size: 1.2rem;">Live Showcase</h2>
+        <p style="color: var(--gold); margin-bottom: 20px; font-size: 0.9rem; font-style: italic;">Latest arrivals in our showroom</p>
+        
+        <div class="video-container">
+            <div class="fb-video" data-href="https://www.facebook.com/share/r/1D5pwc7hJr/" data-width="360" data-show-text="false"></div>
+        </div>
+
+        <a href="https://www.facebook.com/TheMedlimEmpire" target="_blank" class="fb-follow-btn">
+            <svg style="width: 18px; height: 18px; margin-right: 10px; fill: white;" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            FOLLOW US ON FACEBOOK
+        </a>
+    </section>
+
+    <div class="container">
+        
+        <h2 id="abayas" class="category-header">Luxury Abayas</h2>
+        <div class="product-grid">
+            <div class="card"><img src="https://i.ibb.co/Gv83r8rX/image.jpg"><div class="card-info"><h4>Executive Abaya Design</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">CHECK PRICE</a></div></div>
+            <div class="card"><img src="https://i.ibb.co/6RwvQH8T/image.jpg"><div class="card-info"><h4>Empire Stone Abaya</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">CHECK PRICE</a></div></div>
+        </div>
+
+        <h2 id="laces" class="category-header">Beaded Laces</h2>
+        <div class="product-grid">
+            <div class="card"><img src="https://i.ibb.co/v6FzhRBH/image.jpg"><div class="card-info"><h4>Intricate Beaded Lace</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">GET QUOTE</a></div></div>
+            <div class="card"><img src="https://i.ibb.co/TxcQzPWd/image.jpg"><div class="card-info"><h4>Luxury Event Lace</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">GET QUOTE</a></div></div>
+        </div>
+
+        <h2 id="wrappers" class="category-header">Wrappers</h2>
+        <div class="product-grid">
+            <div class="card"><img src="https://i.ibb.co/yBh9BTwV/image.jpg"><div class="card-info"><h4>Premium Classic Wrappers</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">CHECK PRICE</a></div></div>
+            <div class="card"><img src="https://i.ibb.co/p6TVcD4K/image.jpg"><div class="card-info"><h4>Latest Empire Stock</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">CHECK PRICE</a></div></div>
+        </div>
+
+        <h2 id="senator" class="category-header">Senator Materials</h2>
+        <div class="product-grid">
+            <div class="card"><img src="https://i.ibb.co/q3DTKpmj/image.jpg"><div class="card-info"><h4>Executive Cashmere</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">GET QUOTE</a></div></div>
+            <div class="card"><img src="https://i.ibb.co/PzcSkMqp/image.jpg"><div class="card-info"><h4>Original Irish</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">GET QUOTE</a></div></div>
+        </div>
+
+        <h2 id="bedsheets" class="category-header">Bedsheets & Duvets</h2>
+        <div class="product-grid">
+            <div class="card"><img src="https://i.ibb.co/d0zrqjd7/image.jpg"><div class="card-info"><h4>Designer Cotton Sets</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">INQUIRE</a></div></div>
+            <div class="card"><img src="https://i.ibb.co/s9JGS19n/image.jpg"><div class="card-info"><h4>Luxury Duvet Stock</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">INQUIRE</a></div></div>
+        </div>
+
+        <h2 id="nightwear" class="category-header">Night Wears</h2>
+        <div class="product-grid">
+            <div class="card"><img src="https://i.ibb.co/KxdRP3yB/image.jpg"><div class="card-info"><h4>Silk & Satin Gowns</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">CHAT TO BUY</a></div></div>
+            <div class="card"><img src="https://i.ibb.co/C32hPFHQ/image.jpg"><div class="card-info"><h4>Quality Loungewear</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">CHAT TO BUY</a></div></div>
+        </div>
+
+        <h2 id="shorts" class="category-header">Short Knickers</h2>
+        <div class="product-grid">
+            <div class="card"><img src="https://i.ibb.co/zVG1RKVY/image.jpg"><div class="card-info"><h4>Casual Empire Shorts</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">SHOP NOW</a></div></div>
+            <div class="card"><img src="https://i.ibb.co/C3qHj7HM/image.jpg"><div class="card-info"><h4>Premium Fitted Shorts</h4><a href="https://wa.me/message/F6HFOXFAP4BYP1" class="price-btn">SHOP NOW</a></div></div>
+        </div>
+
+    </div>
+
+    <footer style="background: var(--dark); color: white; padding: 40px 20px; text-align: center;">
+        <p style="font-weight: bold; letter-spacing: 2px; color: var(--gold);">THE MEDLIM EMPIRE</p>
+        <p style="font-size: 0.6rem; opacity: 0.4;">© 2026 The Medlim Empire Fashion. Aba • Abuja</p>
+    </footer>
+
+    <a href="https://wa.me/message/F6HFOXFAP4BYP1" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
+    </a>
+
+</body>
+          </html>
+  
